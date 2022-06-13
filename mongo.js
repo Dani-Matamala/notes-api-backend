@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const password = require('./password');
 
-const connectionString = `mongodb+srv://91Daniel-dev:${password}@cluster0.c0tymmg.mongodb.net/?retryWrites=true&w=majority`
+const connectionString = process.env.MONGO_DB_URI
 
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
